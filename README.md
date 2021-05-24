@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Demo 
+
+![Screenshot](app/views/articles/assets/images/articles.png)
+![Screenshot](app/views/articles/assets/images/addnewarticle.png)
+![Screenshot](app/views/articles/assets/images/newadded.png)
+
+
+
+
