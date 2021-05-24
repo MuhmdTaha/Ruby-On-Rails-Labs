@@ -37,14 +37,26 @@
       font-size: 24px;
       font-style: italic;
     }
+    
+    .back {
+      margin-top:55px;
+      padding: 10px;
+      
+    }
+    .back a {
+      color: #fff;
+      text-decoration:none;
+    }
   </style>
 </head>
 
 <body>
 
   <header id="main-header">
+    
     <h1>Welcome to My Rails Blog!</h1>
   </header>
+  
 
   <div class="article-card">
     <div class="main-title">
@@ -58,6 +70,11 @@
       <p>
         <%= @article.body %>
       </p>
+    </div>
+    <div class="back">
+      <button class="btn btn-danger">
+          <%= link_to "Add another article" , new_article_path %>
+        </button>
     </div>
   </div>
 </body>

@@ -48,8 +48,11 @@ textarea {
 }
 add-article {
   padding: 7px;
-  margin-top: 20px;
+  
 }
 .article-title label {
   margin-bottom: 12px;
+}
+.back{
+  float: right;
 }
