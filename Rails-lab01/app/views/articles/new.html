@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+  <header id="main-header">
+    <h1>Welcome to My Rails Blog!</h1>
+  </header>
+  <h2>Here You Can Add New Article</h2>
+</body>
+
+</html>
+
+
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+      <%= form.text_field :title %>
+        <% @article.errors.full_messages_for(:title).each do |message| %>
+          <div>
+            <%= message %>
+          </div>
+          <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+      <%= form.text_area :body %>
+        <% @article.errors.full_messages_for(:body).each do |message| %>
+          <div>
+            <%= message %>
+          </div>
+          <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  <% end %>
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Add New Article</title>
+      <link rel="stylesheet" href="./new.css" />
+      <link rel="stylesheet" href="./assets/styles/app.css">
+    </head>
+
+    <body>
+
+      <header id="main-header">
+        <h1>Welcome to My Rails Blog!</h1>
+      </header>
+
+      <section class="wrapper">
+        <div class="message">
+          <p>Here You Can Add New Article</p>
+        </div>
+        <%= form_with model: @article do |form| %>
+
+        <div class="article-title">
+          <input type="text" name="title" id="title" placeholder="Title">
+        </div>
+        <div class="article-body">
+          <textarea name="article" id="article" rows="100" placeholder="Your article body..."></textarea>
+        </div>
+
+        <div>
+          <button class="btn btn-danger">Add Article</button>
+          <%= form.submit %>
+        </div>
+        <% end %>
+      </section>
+    </body>
+
+    </html>

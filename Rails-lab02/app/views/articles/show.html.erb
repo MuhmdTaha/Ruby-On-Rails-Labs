@@ -1,0 +1,27 @@
+<h1>Article<h1>
+
+<label>Author: <%= @article.user.full_name %></label>
+
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<%= link_to "Edit", edit_article_path(@article) %>
+<% if current_user.admin? %>
+<span> | </span>
+<%= link_to "Delete", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+<%end%>
+<h2>Comments</h2>
+
+<%= turbo_stream_from "comments" %>
+<%= turbo_frame_tag "comments" do %>
+    <%= render @article.comments %>
+<% end %>
+
+ <h2>Add a comment:</h2>
+<%= turbo_frame_tag "comment_form" do %>
+    <%= render 'comments/form' %>
+<% end %>
